@@ -5,14 +5,15 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    vector<string> v;
+    vector<char*> v = {};
     if (argc < 2) {
         printf("ERROR: You need at least one argument.\n");
         return -1;
     }
+   
 
     for (char** pargv = argv; *pargv != argv[argc]; pargv++) {
-        string s = "";
+        char* s = "";
 
 
         for (char* ptr = *pargv; *ptr != '\0'; ptr++) {
@@ -21,6 +22,12 @@ int main(int argc, char* argv[])
 
         }
         v.push_back(s);
-
+        
     }
+
+    for (std::size_t i = 0; i < v.size(); ++i) {
+        printf(v[i] + '\n');
+    }
+
+
 }
